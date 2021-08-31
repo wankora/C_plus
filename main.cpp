@@ -48,11 +48,19 @@ using namespace std;
 //     CManiac():m_iSize(3){}
 // };
 
-
-void twice(int a)
+void funcB(int & numB)
 {
-    cout << a << endl;
-    a += 2;
-    cout << a << endl;
+    numB = 50;
+    cout << "&numB: " << &numB << endl;
 }
 
+int main()
+{
+    int numA = 80;
+    cout << "numA: " << numA << endl;
+    funcB(numA);
+    cout << "numA: " << numA << endl;
+
+    cout << "&numA: " << &numA << endl;
+
+}
